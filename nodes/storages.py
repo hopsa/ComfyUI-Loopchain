@@ -220,7 +220,7 @@ class LatentStorageReset:
 
     def execute(self, key_list):
         key = key.strip()
-        keys = GLOBAL_LATENT_STORAGE.keys() if key_list.strip() == '*' else ','.split(key_list)
+        keys = GLOBAL_LATENT_STORAGE.keys() if key_list.strip() == '*' else key_list.split(',')
         keys = list(map(lambda key: key.strip(), keys))
         for key in keys:
             if key in GLOBAL_LATENT_STORAGE:
